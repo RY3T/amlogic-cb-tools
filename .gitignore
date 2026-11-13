@@ -4,3 +4,4 @@
 /local/
 /.playwright-mcp/
 /.vscode/mcp.json
+/dist/

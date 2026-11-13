@@ -339,3 +339,18 @@ Example copy target:
 ## License
 
 This project is licensed under the GNU General Public License v3.0 (GPLv3).
+
+## Releases
+
+RY3T releases are tagged `ry3t-vX.Y.Z` on `main` and published on
+[RY3T/amlogic-cb-tools releases](https://github.com/RY3T/amlogic-cb-tools/releases)
+with every tool built for the control boards (aarch64 musl) and `SHA256SUMS`.
+The installer (RY3T/mujina-installer) downloads them from there. mujina-minerd
+links this crate as a library; its release notes name the cb-tools commit.
+
+```bash
+scripts/release.sh ry3t-vX.Y.Z [NOTES_FILE]
+```
+
+It tags a clean `main` equal to origin/main (or uses the tag if it already
+exists), builds from the tag in a temporary worktree, and creates the release.
